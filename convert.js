@@ -3,6 +3,7 @@ const arithmetic = require('./arithmetic');
 const boolean_man = require('./boolean_manipulation');
 const string_man = require('./string_manipulation');
 const conversion = require('./conversion');
+const eval = require('./eval');
 
 function convertChar(charstack) {
     const c = charstack.pop();
@@ -16,7 +17,7 @@ function convertChar(charstack) {
         case '\ud83c':
             const c21 = charstack.pop();
             if (c21 == '\udfc3') {
-                return evaluate();
+                return eval.evaluate();
             } else {
                 console.error("unexpected character: ", c + c21);
             }
@@ -150,40 +151,6 @@ function stringToStack(str) {
 
 function outputTop() {
     return stack_man.popStack('out') + `console.log(out);\n`;
-}
-
-function evaluate() {
-    const instr1 = stack_man.popStack('a');
-    const instr2 = 
-    `if(!fs.existsSync('tmp')) {fs.mkdirSync('tmp')} 
-fs.writeFileSync(\`tmp/tmp.em\`, a);
-exec(\`node compile.js tmp/tmp.em tmp/tmp.js -s=\${stack.map(elt => "'" + elt + "'")}\`, (error, stdout, stderr) => {
-    if (error) {
-        console.error(\`error at compile: \${error.message}\`);
-        return;
-    }
-      
-    if (stderr) {
-        console.error(\`stderr at compile: \${stderr}\`);
-        return;
-    }
-    exec(\`node tmp/tmp.js\`, (error, stdout, stderr) => {
-        if (error) {
-            console.error(\`error at compile: \${error.message}\`);
-            return;
-        }
-          
-        if (stderr) {
-            console.error(\`stderr at compile: \${stderr}\`);
-            return;
-        }
-
-        prog = stdout;
-    });
-});
-`
-    const instr3 = stack_man.pushStack('prog');
-    return instr1 + instr2 + instr3;
 }
 
 module.exports = {
