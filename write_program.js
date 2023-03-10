@@ -1,7 +1,7 @@
 const conv = require('./convert');
 
 function init(stack) {
-    return `const writeProgram = require('../write_program');\nconst fs = require('fs');\nconst { exec } = require('child_process');\nlet stack = [${stack}];\nlet a, b, out, prog;\n`
+    return `const writeProgram = require('../write_program');\nconst fs = require('fs');\nconst { exec } = require('child_process');\nlet stack = [${stack}];\nlet a, b, c, out, prog;\n`
 }
 
 function writeProgram(str, stack) {

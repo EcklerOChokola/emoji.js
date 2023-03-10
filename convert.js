@@ -13,7 +13,7 @@ function convertChar(charstack) {
         case '➡':
             return outputTop();
         case '✂':
-            return getSubstring();
+            return string_man.getSubstring();
         case '\ud83c':
             const c21 = charstack.pop();
             if (c21 == '\udfc3') {

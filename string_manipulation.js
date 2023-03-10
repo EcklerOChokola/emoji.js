@@ -19,8 +19,17 @@ function stringFunction(str) {
     return instr1 + instr2 + instr3;
 }
 
+function getSubstring() {
+    const instr1 = stack_man.popStack('c');
+    const instr2 = stack_man.popStack('b');
+    const instr3 = stack_man.popStack('a');
+    const instr4 = 'a = a.substring(b, c);\n';
+    return instr1 + instr2 + instr3 + instr4;
+}
+
 module.exports = {
     uppercaseTop,
     lowercaseTop,
-    lengthOfTop
+    lengthOfTop,
+    getSubstring
 }
