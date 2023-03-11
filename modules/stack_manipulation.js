@@ -1,11 +1,25 @@
+/**
+ * Pops the top element of the stack
+ * @param {string} str the name of the variable to store the popped item in
+ * @returns the conform instructions
+ */
 function popStack(str) {
     return `${str} = stack.pop();\n`
 }
 
+/**
+ * Pushes an element to the top of the stack
+ * @param {object} obj the name of the object to push
+ * @returns the conform instructions
+ */
 function pushStack(obj) {
     return `stack.push(${obj});\n`
 }
 
+/**
+ * Swaps the two elements at the top of the stack
+ * @returns the conform instructions
+ */
 function swapTopValues() {
     const instr1 = popStack('a');
     const instr2 = popStack('b');
@@ -16,7 +30,7 @@ function swapTopValues() {
 
 /**
  * Duplicates the top of the stack 
- * @returns instruction
+ * @returns the conform instructions
  */
 function duplicateTop() {
     const instr1 = popStack('a');
@@ -30,5 +44,3 @@ module.exports = {
     swapTopValues,
     duplicateTop
 };
-
-duplicateTop();

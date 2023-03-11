@@ -13,12 +13,12 @@ To run the project, you only need to have node installed.
 To compile an emoji program, you can simply use the following command :
 
 ```
-node compile.js your_program.em [destination.js] [-s=stack]
+node compile.js your_program.em [folder/destination.js] [-s=stack]
 ```
 
 Using no destination will simply output the resulting node.js script in the standard output.
 
-Specifying a destination file will write the program in the specified file. However, due to the way the compilation is executed, **the functionning of the program is not guaranteed if the destination is not at the root of the project**, as the compiled script imports a module. 
+Specifying a destination file will write the program in the specified file. However, due to the way the compilation is executed, **the functionning of the program is not expected if the destination is not in a folder just under the root of the project**, as the compiled script imports a module from the `modules` folder. 
 
 *Remark : this might be fixed in the future, but it is unsure*
 

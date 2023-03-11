@@ -84,3 +84,5 @@ Runner evaluates a string as an emoji program with an initial stack identical to
 End, back and penguins can be treated as if else statements
 
 Loop is a while loop
+
+All text outside of string markers is considered a comment and won't be considered.

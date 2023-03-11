@@ -5,6 +5,11 @@ const string_man = require('./string_manipulation');
 const conversion = require('./conversion');
 const eval = require('./eval');
 
+/**
+ * Converts a character to a set of instructions, depending of what the character corresponds to
+ * @param {string[]} charstack the stack of characters
+ * @returns the deduced instruction
+ */
 function convertChar(charstack) {
     const c = charstack.pop();
     switch (c) {
@@ -98,16 +103,25 @@ function convertChar(charstack) {
         case ' ':
         case '\t':
         case '\n':
-            return "";
         default:
-            console.error("unexpected character: ", c);
+            return "";
     }
 }
 
+/**
+ * Catches all characters to the next speech bubble and pushes it
+ * @param {string[]} charstack the input charstack
+ * @returns the caught string in a push instruction
+ */
 function simpleString(charstack) {
     return stack_man.pushStack(`"${getString(charstack)}"`);
 }
 
+/**
+ * Catched a string until it finds a speech bubble
+ * @param {string[]} charstack the input charstack
+ * @returns the caught string
+ */
 function getString(charstack) {
     const c = charstack.pop();
     switch (c) {
@@ -123,10 +137,20 @@ function getString(charstack) {
     }
 }
 
+/**
+ * Catches all characters to the next car in a nested manner and pushes it
+ * @param {string[]} charstack the input charstack
+ * @returns the caught string in a push instruction
+ */
 function nestedPumpString(charstack) {
     return stack_man.pushStack(`"${getNestedString(charstack, 0)}"`);
 }
 
+/**
+ * Catched a string until it finds a car in a nested manner
+ * @param {string[]} charstack the input charstack
+ * @returns the caught string
+ */
 function getNestedString(charstack, deepness) {
     const c = charstack.pop();
     switch (c) {
@@ -145,10 +169,19 @@ function getNestedString(charstack, deepness) {
     }
 }
 
+/**
+ * Converts an emoji program to a character stack to be converted
+ * @param {string} str the input program
+ * @returns the stack corresponding to the program
+ */
 function stringToStack(str) {
     return str.split('').reverse();
 }
 
+/**
+ * Provides the instructions to put the top of the stack in the standard output
+ * @returns the conform instructions
+ */
 function outputTop() {
     return stack_man.popStack('out') + `console.log(out);\n`;
 }

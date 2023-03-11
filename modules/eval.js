@@ -1,3 +1,9 @@
+const stack_man = require('./stack_manipulation');
+
+/**
+ * Used to evaluate the string on top of the stack as an emoji program
+ * @returns the conform instructions
+ */
 function evaluate() {
     const instr1 = stack_man.popStack('a');
     const instr2 = 
