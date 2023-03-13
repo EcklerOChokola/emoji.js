@@ -6,7 +6,7 @@ const conv = require('./convert');
  * @returns the header of the program
  */
 function init(stack) {
-    return `const writeProgram = require('../modules/write_program');\nconst fs = require('fs');\nconst { exec } = require('child_process');\nlet stack = [${stack}];\nlet a, b, c, out, prog;\n`
+    return `const writeProgram = require('../modules/write_program');\nconst fs = require('fs');\nconst { exec } = require('child_process');\nlet stack = [${stack}];\nlet data = {};\nlet a, b, c, out, prog;\n`
 }
 
 /**

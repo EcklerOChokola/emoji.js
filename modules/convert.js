@@ -5,6 +5,7 @@ const string_man = require('./string_manipulation');
 const conversion = require('./conversion');
 const eval = require('./eval');
 const array_man = require('./array_manipulation');
+const pointer_man = require('./pointer_manipulation');
 
 /**
  * Converts a character to a set of instructions, depending of what the character corresponds to
@@ -85,6 +86,8 @@ function convertChar(charstack) {
                     return array_man.key();
                 case '\udccc':
                     return array_man.pushPin();
+                case '\udcf2':
+                    return pointer_man.createPointer();
                 default:
                     console.error("unexpected character: ", c + c2);
             }
@@ -97,10 +100,8 @@ function convertChar(charstack) {
             return createLabel();
         case '🔃':
             return loop();
-        case '📲':
-            return createPointer();
         case '📱':
-            return accessPointed();;*/
+            return accessPointed();*/
         case ' ':
         case '\t':
         case '\n':
