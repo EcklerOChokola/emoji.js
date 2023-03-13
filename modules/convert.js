@@ -88,6 +88,8 @@ function convertChar(charstack) {
                     return array_man.pushPin();
                 case '\udcf2':
                     return pointer_man.createPointer();
+                case '\udcf1':
+                    return pointer_man.accessPointed();
                 default:
                     console.error("unexpected character: ", c + c2);
             }
