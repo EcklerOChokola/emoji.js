@@ -83,6 +83,8 @@ function convertChar(charstack) {
                     return array_man.newArray();
                 case '\udd11':
                     return array_man.key();
+                case '\udccc':
+                    return array_man.pushPin();
                 default:
                     console.error("unexpected character: ", c + c2);
             }
@@ -98,11 +100,7 @@ function convertChar(charstack) {
         case '📲':
             return createPointer();
         case '📱':
-            return accessPointed();
-        case '📌': 
-            return pushToEndOfArray();
-        case '🔑':
-            return getValueAtIndex();*/
+            return accessPointed();;*/
         case ' ':
         case '\t':
         case '\n':
