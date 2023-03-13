@@ -81,6 +81,8 @@ function convertChar(charstack) {
                     return arithmetic.testGreater();
                 case '\udcda':
                     return array_man.newArray();
+                case '\udd11':
+                    return array_man.key();
                 default:
                     console.error("unexpected character: ", c + c2);
             }
