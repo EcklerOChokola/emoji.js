@@ -101,9 +101,7 @@ function convertChar(charstack) {
         case '🐧':
             return createLabel();
         case '🔃':
-            return loop();
-        case '📱':
-            return accessPointed();*/
+            return loop();*/
         case ' ':
         case '\t':
         case '\n':
