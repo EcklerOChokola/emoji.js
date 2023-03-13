@@ -8,8 +8,19 @@ function newArray() {
     return stack_man.pushStack('[]');
 }
 
-
+/**
+ * Generates the instructions to get a value from a key in an array and push the result on top of the stack
+ * @returns the conform instructions
+ */
+function key() {
+    const instr1 = stack_man.popStack('b');
+    const instr2 = stack_man.popStack('a');
+    const instr3 = 'a = a[b];\n';
+    const instr4 = stack_man.pushStack('a');
+    return instr1 + instr2 + instr3 + instr4; 
+}
 
 module.exports = {
-    newArray
+    newArray,
+    key
 }
