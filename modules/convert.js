@@ -4,6 +4,7 @@ const boolean_man = require('./boolean_manipulation');
 const string_man = require('./string_manipulation');
 const conversion = require('./conversion');
 const eval = require('./eval');
+const array_man = require('./array_manipulation');
 
 /**
  * Converts a character to a set of instructions, depending of what the character corresponds to
@@ -78,6 +79,8 @@ function convertChar(charstack) {
                     return arithmetic.testLess();
                 case '\udc14':
                     return arithmetic.testGreater();
+                case '\udcda':
+                    return array_man.newArray();
                 default:
                     console.error("unexpected character: ", c + c2);
             }
@@ -94,8 +97,6 @@ function convertChar(charstack) {
             return createPointer();
         case '📱':
             return accessPointed();
-        case '📚':
-            return pushNewArray();
         case '📌': 
             return pushToEndOfArray();
         case '🔑':

@@ -9,7 +9,7 @@ function popStack(str) {
 
 /**
  * Pushes an element to the top of the stack
- * @param {object} obj the name of the object to push
+ * @param {string} obj the name of the object to push
  * @returns the conform instructions
  */
 function pushStack(obj) {
