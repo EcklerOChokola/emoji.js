@@ -20,7 +20,19 @@ function key() {
     return instr1 + instr2 + instr3 + instr4; 
 }
 
+/**
+ * Generates the instructions to push a value from the stack to an array from the stack
+ * @returns the conform instructions
+ */
+function pushPin() {
+    const instr1 = stack_man.popStack('b');
+    const instr2 = stack_man.popStack('a');
+    const instr3 = 'a.push(b);\n';
+    return instr1 + instr2 + instr3;
+}
+
 module.exports = {
     newArray,
-    key
+    key,
+    pushPin
 }
