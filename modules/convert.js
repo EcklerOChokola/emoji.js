@@ -84,6 +84,8 @@ function convertChar(charstack) {
                     return array_man.newArray();
                 case '\udd11':
                     return array_man.key();
+                case '\udccc':
+                    return array_man.pushPin();
                 case '\udcf2':
                     return pointer_man.createPointer();
                 default:
