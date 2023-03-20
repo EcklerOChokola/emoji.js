@@ -6,6 +6,7 @@ const conversion = require('./conversion');
 const eval = require('./eval');
 const array_man = require('./array_manipulation');
 const pointer_man = require('./pointer_manipulation');
+const jump_man = require('./jump');
 
 /**
  * Converts a character to a set of instructions, depending of what the character corresponds to
@@ -90,6 +91,12 @@ function convertChar(charstack) {
                     return pointer_man.createPointer();
                 case '\udcf1':
                     return pointer_man.accessPointed();
+                case '\udd1a':
+                    return jump_man.jumpIfFalse();
+                case '\udd19':
+                    return jump_man.ifLastDidNotJump();
+                case '\udc27':
+                    return jump_man.label();
                 default:
                     console.error("unexpected character: ", c + c2);
             }
