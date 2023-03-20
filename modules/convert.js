@@ -101,12 +101,6 @@ function convertChar(charstack) {
                     console.error("unexpected character: ", c + c2);
             }
             /*
-        case '🔚':
-            return jumpIfFalse(currentLabel() + 1);
-        case '🔙':
-            return jumpIfLastEndDidNot(currentLabel() + 1);
-        case '🐧':
-            return createLabel();
         case '🔃':
             return loop();*/
         case ' ':
