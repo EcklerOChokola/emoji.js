@@ -15,7 +15,7 @@ function main() {
     if(args.length == 3) {
         interpret(args[2]);
     }else if(args.length == 4) {
-        compile(args[2], args[3], '[]');
+        compile(args[2], args[3], '');
     }else if(args[4].startsWith('-s=')) {
         compile(args[2], args[3], args[4].substring(3));
     }
@@ -41,6 +41,7 @@ function compile(str, out, stack) {
     const input = fs.readFileSync(str).toLocaleString();
     const prog = writeProgram.writeProgram(input, stack);
     fs.writeFileSync(out, prog);
+    console.log(`Compiled successfully in ${out}`)
 }
 
 /**

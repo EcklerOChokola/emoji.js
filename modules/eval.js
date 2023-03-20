@@ -21,21 +21,19 @@ exec(\`node compile.js tmp/tmp.em tmp/tmp.js -s=\${stack.map(elt => "'" + elt + 
     }
     exec(\`node tmp/tmp.js\`, (error, stdout, stderr) => {
         if (error) {
-            console.error(\`error at compile: \${error.message}\`);
+            console.error(\`error at compile: \${error}\`);
             return;
         }
           
         if (stderr) {
-            console.error(\`stderr at compile: \${stderr}\`);
-            return;
+            stack = stderr;
         }
 
-        prog = stdout;
+        console.log(stdout)
     });
 });
-`
-    const instr3 = stack_man.pushStack('prog');
-    return instr1 + instr2 + instr3;
+`;
+    return instr1 + instr2;
 }
 
 module.exports = {

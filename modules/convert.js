@@ -98,7 +98,7 @@ function convertChar(charstack) {
                 case '\udc27':
                     return jump_man.label();
                 default:
-                    console.error("unexpected character: ", c + c2);
+                    return "";
             }
             /*
         case '🔃':

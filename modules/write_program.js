@@ -19,9 +19,9 @@ function writeProgram(str, stack) {
     let input = conv.stringToStack(str);
     let program = init(stack);
     while (input.length != 0) {
-        console.log(input);
         program += conv.convertChar(input);
     }
+    program += 'console.error(stack);'
     return(program);
 }
 
