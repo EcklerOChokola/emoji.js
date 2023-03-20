@@ -1,6 +1,10 @@
-const writeProgram = require('../write_program');
+const writeProgram = require('../modules/write_program');
+const fs = require('fs');
+const { exec } = require('child_process');
 let stack = [];
-let a, b, out, prog;
+let data = {};
+let a, b, c, out, prog;
 stack.push("Coucou le monde!");
 out = stack.pop();
 console.log(out);
+console.error(stack);

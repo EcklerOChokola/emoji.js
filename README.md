@@ -24,6 +24,12 @@ Specifying a destination file will write the program in the specified file. Howe
 
 The `-s` option can only be used when compiling the emoji program to a destination as of today.
 
+## Code samples/examples
+
+A simple **Hello, world!** example is able to be run with a `node main.js`, which outputs the compiled program to `out/out.js`.
+
+Further test samples are available in the `tests` folder, with explanations on their use in comments.
+
 ## Further documentation
 
 All documentation can be found in the `doc` folder, as well as on [esolangs.org](https://esolangs.org/wiki/Emoji).
